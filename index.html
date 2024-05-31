@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="color: blue; background-color: rgb(164, 51, 16); border-radius: 3px;">Note</button>
+    <div class="note" style="color: rgb(115, 17, 31); font-size: 25px;font-style: italic;"></div>
+    <script>
+       /* if (localStorage.getItem("name")) {
+            let a=localStorage.getItem("name");
+            document.write("welcome" +a)
+        }
+        else{
+            let a=prompt("enter your name")
+            localStorage.setItem("name",a)
+        }*/
+        function saveNote(note){
+            localStorage.setItem("note",note);
+
+        }
+        let note=localStorage.getItem("note")
+        if(note){
+        document.querySelector(".note").innerHTML=note;
+
+    }
+    document.querySelector("button").addEventListener("click",()=>{
+        let note=prompt("enter your note")
+        saveNote(note)
+        document.querySelector(".note").innerHTML=note;
+
+    })
+
+
+    </script>
+</body>
+</html>
